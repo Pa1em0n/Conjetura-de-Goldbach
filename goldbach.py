@@ -22,8 +22,6 @@ def conjuntoSol(imparcompuesto,suma):
 #comprueba que cada impar compuesto dado esté en el conjunto de imapares compuestos dados por la suma.
 def goldbach(iparcompuesto,sol):
 	m = []
-	print(imparcompuesto)
-	print(sol)
 	for x in imparcompuesto:
 		if x not in sol:
 			m.append(x)
@@ -56,7 +54,10 @@ def compuestos(num):
 #regresa el menor impar compuesto que no esta en el conjunto de impares compuestos dados por la suma.
 def menor(resultados):
 	m = sorted(resultados)	
-	return m[0]
+	if(m==[]):
+		print("no hay elemento minimo")
+	else:
+		print("el elemento minimo es "+ str(m[0]))
 
 
 compuestos = compuestos(2000)
@@ -65,4 +66,4 @@ imparcompuesto = imparCompuesto(compuestos)
 suma = suma(imparcompuesto,primos)
 conjuntosol = conjuntoSol(imparcompuesto,suma)
 resultados = goldbach(imparcompuesto,conjuntosol)
-print(menor(resultados))
+menor(resultados)
